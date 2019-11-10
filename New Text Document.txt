@@ -1,0 +1,5 @@
+This application requires administrative permission to set the system time.
+After installation right-click the program TimeFudge.exe and enable "Run as administrator".
+
+de Mike W9MDB mdblack98@yahoo.com
+
