@@ -2,6 +2,8 @@ This application will ask for administrative rights as it needs to adjust the co
 de Mike W9MDB
 
 Change log
+V1.4.1
+    Changed Icon again
 V1.4
 	Improve tooltip on button to explain use with WSJT-X
 	Change default to -1 second as everybody is late...not early....

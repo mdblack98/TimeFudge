@@ -2,11 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "TimeFudge"
-#define MyAppVersion "1.4"
+#define MyAppVersion "1.4.1"
 #define MyAppPublisher "W9MDB"
 #define MyAppURL "https://www.qrz.com/db/W9MDB"
 #define MyAppExeName "TimeFudge.exe"
-#define MyAppIcoName "Clock-icon_256.ico"
+#define MyAppIcoName "Clock.ico"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -22,9 +22,10 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={commonpf}\{#MyAppName}
 DisableProgramGroupPage=yes
+InfoBeforeFile=C:\Users\mdbla\Dropbox\Projects\TimeFudge\TimeFudge\Readme.txt
 OutputDir=C:\Users\mdbla\Dropbox\Projects\TimeFudge\Install
 OutputBaseFilename=TimeFudge{#MyAppVersion}
-SetupIconFile=C:\Users\mdbla\Dropbox\Projects\TimeFudge\Clock-icon_256.ico
+SetupIconFile=C:\Users\mdbla\Dropbox\Projects\TimeFudge\Clock.ico
 Compression=lzma
 SolidCompression=yes
 

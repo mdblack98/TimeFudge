@@ -20,7 +20,6 @@ namespace TimeFudge
     public partial class TimeFudgeForm : Form
 #pragma warning restore CA1060 // Move pinvokes to native methods class
     {
-        private readonly ToolTip toolTip = new ToolTip();
         double total = 0;
         [StructLayout(LayoutKind.Sequential)]
         private struct FileTime
@@ -115,8 +114,8 @@ namespace TimeFudge
         internal bool IsUserInAdminGroup()
         {
             bool fInAdminGroup = false;
-            SafeTokenHandle hToken = null;
-            SafeTokenHandle hTokenToCheck = null;
+            SafeTokenHandle? hToken = null;
+            SafeTokenHandle? hTokenToCheck = null;
             IntPtr pElevationType = IntPtr.Zero;
             IntPtr pLinkedToken = IntPtr.Zero;
             int cbSize = 0;
@@ -278,7 +277,7 @@ namespace TimeFudge
         internal bool IsProcessElevated()
         {
             bool fIsElevated = false;
-            SafeTokenHandle hToken = null;
+            SafeTokenHandle? hToken = null;
             int cbTokenElevation = 0;
             IntPtr pTokenElevation = IntPtr.Zero;
 
@@ -378,7 +377,7 @@ namespace TimeFudge
         internal int GetProcessIntegrityLevel()
         {
             int IL = -1;
-            SafeTokenHandle hToken = null;
+            SafeTokenHandle? hToken = null;
             int cbTokenIL = 0;
             IntPtr pTokenIL = IntPtr.Zero;
 
@@ -502,9 +501,11 @@ namespace TimeFudge
             {
                 Application.Exit();
             }
-            toolTip.SetToolTip(buttonFudge, Resource1.toolTipButtonFudge);
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(buttonFudge, Resource1.toolTipButtonFudge.Replace("\\n","\n"));
             toolTip.SetToolTip(labelTotal, Resource1.toolTipLabelTotal);
             toolTip.SetToolTip(numericUpDownSeconds, Resource1.toolTipNumericUpDownSeconds);
+            toolTip.Dispose();
             setTotal();
         }
 
